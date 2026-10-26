@@ -17,9 +17,9 @@ The repository ships the CMake project, warnings, CTest wiring, and `.gitignore`
 - [ ] Configure a sanitizer build (`-DENABLE_SANITIZERS=ON`) and run the tests.
 - [ ] Confirm Git is installed and configured.
 - [ ] Confirm `.gitignore` keeps `build/` and generated binaries out of version control.
-- [ ] Create `PROGRESS.md` from [`PROGRESS.template.md`](PROGRESS.template.md), and `BACKLOG.md`.
+- [ ] Create `PROGRESS.md` from [`PROGRESS.template.md`](PROGRESS.template.md). (`BACKLOG.md` comes later, from [`BACKLOG.template.md`](BACKLOG.template.md), when your first side-idea appears.)
 - [ ] Decide on naming and formatting conventions.
-- [ ] Record the current milestone, target outcome, and next action in `PROGRESS.md`.
+- [ ] Write Milestone + Next in `PROGRESS.md`.
 
 ## 2. Every milestone
 
@@ -58,7 +58,7 @@ The repository ships the CMake project, warnings, CTest wiring, and `.gitignore`
 - [ ] Public behavior and limitations are documented where needed.
 - [ ] The example or demonstration still works.
 - [ ] The change is committed to Git.
-- [ ] `PROGRESS.md` records evidence, remaining limitations, and the next milestone.
+- [ ] `PROGRESS.md` has a Done block with proof, and Next points at the next milestone.
 
 ## 3. Weekly loop
 
@@ -380,7 +380,7 @@ Learning exercises — not automatically suitable for production use.
 
 ## 11. Milestone completion record
 
-Record each milestone in `PROGRESS.md` using the milestone section from [`PROGRESS.template.md`](PROGRESS.template.md). Tick acceptance criteria from evidence, not from memory.
+Record each finished milestone as a Done block in `PROGRESS.md` (proof = test result + commit). Tick acceptance criteria from evidence, not from memory.
 
 ## 12. Final self-assessment
 

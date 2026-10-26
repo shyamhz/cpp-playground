@@ -20,7 +20,7 @@ How to run sessions, keep the weekly rhythm, and recover when the plan and reali
 
 ## 2. Progress record: `PROGRESS.md`
 
-Copy [`PROGRESS.template.md`](PROGRESS.template.md) to the repository root and update it at the end of every session. It holds three things: your current state, a session log, and one record per milestone. It is the only file you must read when returning after time away. Field-by-field rules, filled examples, and the `BACKLOG.md` parking lot: [guides/log.md](guides/log.md).
+Copy [`PROGRESS.template.md`](PROGRESS.template.md) to the repository root. At the end of every session, spend 2 minutes: update **Now → Next**, add one **Log** row. When a milestone finishes, add one **Done** block. That's the whole system — examples in [guides/log.md](guides/log.md). It is the only file you must read when returning after time away.
 
 **Git checkpoints**
 
@@ -48,21 +48,21 @@ A default 2–3 hour session (shorten it on busy days):
 
 | Segment | Duration | Action |
 |:--------|---------:|:-------|
-| Re-entry | 5–10 min | Read `PROGRESS.md`; run the last build/test command |
+| Re-entry | 5–10 min | Read `PROGRESS.md` → Next; run build + test |
 | Focus block 1 | 35–50 min | Implement one narrow behavior |
 | Break | 5–10 min | Step away from the screen |
 | Focus block 2 | 35–50 min | Add tests or complete the behavior |
 | Verification | 15–25 min | Build, test, inspect output, reproduce edge cases |
-| Handoff | 5 min | Record the result, blocker, and next action |
+| Handoff | 2 min | Update `PROGRESS.md`: set **Next**, add one **Log** row |
 
-Never spend the first hour deciding what to do — the next action is already in `PROGRESS.md`.
+Never spend the first hour deciding what to do — **Next** is already in `PROGRESS.md`.
 
 **The 20-minute minimum (bad days)**
 
-1. Read the next action.
+1. Read **Next** in `PROGRESS.md`.
 2. Run the existing build and tests.
 3. Make one small improvement, or write a test that pins down the next bug.
-4. Record the next action.
+4. Update **Next** + one **Log** row (2 min).
 
 Continuity is the win; a short session does not need to produce a feature.
 
@@ -78,13 +78,11 @@ At the start of the week:
 4. Decide what you will deliberately *not* build this week.
 5. Keep the buffer day empty; don't pre-fill it with scope.
 
-At the end of the week, answer in `PROGRESS.md`:
+At the end of the week, answer in `PROGRESS.md`'s Log (one line each):
 
 - What works now that didn't before?
-- Which acceptance criteria pass?
 - What is still broken or unclear?
-- Is the next milestone still safe to start?
-- Does the timeline need to move?
+- Is the next milestone safe to start?
 
 **Recovery capacity.** The buffer day is for debugging, illness, busy periods, and review. Consolidation weeks are not invitations to add features; they protect the plan from predictable overruns. If the buffer is consumed two weeks in a row, cut scope the following week. If a milestone stays blocked after two focused sessions, stop adding code and diagnose the blocker.
 
@@ -96,7 +94,7 @@ At the end of the week, answer in `PROGRESS.md`:
 4. **Implement the smallest vertical slice.** One end-to-end behavior. No broad abstractions until a second use case proves the need.
 5. **Test the invariants.** Cover success and failure. Memory-owning code: lifetime and exceptions. Processes: exit status and cleanup. Terminals: resize and restoration. HTTP: fragmentation, framing, and resource limits.
 6. **Review the design.** Who owns each resource? What happens on failure? What bounds memory, time, and queued work? What assumptions does the API make? What test would falsify your understanding?
-7. **Commit and record.** Acceptance criteria pass → commit and mark the milestone done. Otherwise mark it active or blocked and write the next concrete action.
+7. **Commit and record.** Acceptance criteria pass → commit, add a **Done** block to `PROGRESS.md`, set the next milestone's **Next**. Otherwise update **Next** and keep going.
 
 ## 7. Working with a C++ coach
 
@@ -139,9 +137,9 @@ Please start with a hint and a diagnostic test, not a full rewrite.
 
 ## 8. Recovery protocols
 
-**A. Missed 1–3 days.** Resume from `PROGRESS.md`: run the last known-good build and tests, then take the smallest next action. Don't redo completed work.
+**A. Missed 1–3 days.** Open `PROGRESS.md`, do **Next**. Run build + tests. Don't redo completed work.
 
-**B. Missed a week or more.** Re-entry session: read `PROGRESS.md` and the current milestone, run the build and tests, inspect the last few commits, fix one small issue or add one clarifying test, then update the next action. Context feels rusty; nothing is actually lost.
+**B. Missed a week or more.** Re-entry session: read `PROGRESS.md` and the current milestone, run the build and tests, look at the last few commits, fix one small thing, then update **Next**. Context feels rusty; nothing is actually lost.
 
 **C. A milestone overruns its week.** Decide whether the cause is missing knowledge, an oversized spec, a bug, or the environment. Split the remaining work into a smaller vertical slice, keep completed behavior and tests, and use the buffer/recovery week. If two focused sessions still leave it blocked, request a review with logs and a minimal reproduction. Move the calendar target rather than bypassing acceptance criteria.
 
@@ -161,7 +159,7 @@ A milestone is done only when its acceptance criteria pass **and** the "Before m
 
 ## 10. Backlog rule (`BACKLOG.md`)
 
-Keep attractive-but-optional work in `BACKLOG.md`, not in the active milestone. Each item states: what problem it solves, which milestone it depends on, what evidence would justify doing it, and a rough effort estimate. Promote an item only when the intended product needs it or the learning return clearly outweighs its cost.
+A good idea that isn't this milestone's work goes to `BACKLOG.md` as one line — then back to work. It becomes real work only when you move it into **Next**. Details: [guides/log.md](guides/log.md).
 
 ## 11. End-of-phase reviews
 

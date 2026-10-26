@@ -88,7 +88,7 @@ Exit-code tests guard **shapes of behavior**: doesn't crash, exits with somethin
 ./build/bin/srcscope a b c
 ```
 
-The Milestone 01 acceptance criteria ask for exact behavior (each argument, index and value, plus the cwd). Compare what appears with what the criteria say — that's manual verification, recorded in `PROGRESS.md` as "manual test or demo".
+The Milestone 01 acceptance criteria ask for exact behavior (each argument, index and value, plus the cwd). Compare what appears with what the criteria say — that's manual verification, and it goes in the Done block's Proof line (see [log.md](log.md)).
 
 2. **Upgrade later to automatic:** when a function becomes testable *in itself* (returns a value rather than printing), unit tests take over. The recipe at [tour.md §Recipe B](tour.md) (`counting_test.cpp` + `assert`) is the shape, designed around exactly the "counting" work of Milestones 02–03.
 

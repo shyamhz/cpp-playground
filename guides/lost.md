@@ -12,9 +12,9 @@ Open this file the moment anything is confusing. Nothing here is long. Find your
 
 | Situation | Do this |
 |:----------|:--------|
-| No idea where the plan stands | Your `PROGRESS.md` (how it's created and read: [guides/log.md](log.md)) → read `Next physical action` → do exactly that |
-| PROGRESS.md doesn't exist | Follow [START.md](../START.md) Part 4 (10 minutes) |
-| PROGRESS exists but is empty/stale | Fill `Current state` using the example in [guides/log.md §Current state](log.md) → then the next action |
+| No idea where the plan stands | Open your `PROGRESS.md` ([how to read it](log.md)) → read **Next** → do exactly that |
+| PROGRESS.md doesn't exist | Follow [START.md](../START.md) Part 4 (5 minutes) |
+| PROGRESS exists but is empty/stale | Fill in the `Now` part using the example in [guides/log.md](log.md) → then do **Next** |
 | Don't remember what the current milestone requires | Open [Roadmap.md](../Roadmap.md), find **only** your phase's week — that's all you need |
 | First day / everything before this looks unread | [START.md](../START.md). Ignore every other doc until its steps finish. |
 | Overwhelmed by the repo's files | You need exactly three things: your `PROGRESS.md` ([guides/log.md](log.md)), your roadmap week, one command set from [guides/build.md §command reference](build.md). The rest is lookup-on-demand ([README's map](../README.md)). |
@@ -67,7 +67,7 @@ Rules so fear never shapes how you play:
 | Symptom | Protocol |
 |:--------|:---------|
 | Same milestone blocked ≥ 2 focused sessions | [operation_manual §7](../operation_manual.md): write the milestone id + minimal repro + exact commands → restart with the hint ladder instead of guessing |
-| A missed day or three | [operation_manual §8.A](../operation_manual.md): resume from `PROGRESS.md`'s next action; no re-doing, no marathon payback |
+| A missed day or three | [operation_manual §8.A](../operation_manual.md): open `PROGRESS.md` and do **Next**; no re-doing, no marathon payback |
 | A missed week or more | §8.B: re-entry — read PROGRESS + run build/test + look at recent commits + one small fix, then next action |
 | Too big, feel behind, project ballooning feeling | §8.D: reduce the release to something *honest but smaller*; backlog grows, plan stays safe |
 | Illness / life | §8.H: pause the schedule, return via one-week re-entry; health dominates the plan |

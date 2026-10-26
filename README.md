@@ -21,7 +21,7 @@ A guided C++ playground. The build system, a component, and tests already work �
 | [guides/tour.md](guides/tour.md) | Every file and CMake line, explained in plain words | The first time a CMake file confuses you |
 | [guides/build.md](guides/build.md) | How building / testing actually works, debug & peek under the hood | When commands feel like magic |
 | [guides/tests.md](guides/tests.md) | How tests are wired and how to write your own safely | Milestone 01 onward (before Milestone 04) |
-| [guides/log.md](guides/log.md) | Exact rules for `PROGRESS.md` and `BACKLOG.md` | Every session's end |
+| [guides/log.md](guides/log.md) | The 2-minute log: `PROGRESS.md` + `BACKLOG.md` | End of every session |
 | [guides/lost.md](guides/lost.md) | Symptom → remedy map, git first aid | **The moment you feel lost** |
 | [operation_manual.md](operation_manual.md) | Session rhythm and recovery procedures | After your first session, then as needed |
 | [checklist.md](checklist.md) | Verification ledger ("tick only with evidence") | With each milestone |
@@ -47,15 +47,15 @@ New here? That block is explained in [START.md](START.md).
 ## The loop you'll repeat for every milestone
 
 ```text
-open PROGRESS.md → read the next action
+open PROGRESS.md → read Next
    → implement one small behavior        (srcscope/src, srcscope/tests)
    → build and test until green
    → tick checklist.md items with evidence
    → commit
-   → write the next action in PROGRESS.md
+   → update Next + one Log row in PROGRESS.md (2 min)
 ```
 
-Never leave the repo not building, and never leave a session without a written next action. That is 80% of finishing a 40-week plan.
+Never leave the repo not building, and never leave a session with Next blank. That is 80% of finishing a 40-week plan.
 
 ## Scope
 

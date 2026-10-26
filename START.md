@@ -1,8 +1,8 @@
 # START here — Day 1
 
-Six short parts get you from zero to: tools verified, build passing, test passing, code touched on purpose, progress log started, and your first milestone underway. Do them in order. The other docs can wait — each is linked exactly where it becomes useful.
+Do these in order. About 30–45 minutes total. Each part says what to type, what you should see, and what to do next. Skip nothing, read nothing else yet — every other doc is linked exactly where you need it.
 
-**Time:** about 45–60 minutes.
+**You will finish with:** tools checked, first build green, first test green, code touched and restored on purpose, log started, Milestone 01 underway.
 
 ---
 
@@ -49,7 +49,7 @@ git config --global user.email "you@example.com"
 
 ## Part 2 — First build (5 min)
 
-Run every command from the repo root (the folder containing `README.md`). Each command is explained fully in [guides/build.md](guides/build.md) later — today, just watch it work.
+Run every command from the repo root (the folder with `README.md`). Just run these — what they mean is explained in [guides/build.md](guides/build.md) for later.
 
 ### 1. Configure — generate the real build files
 
@@ -113,7 +113,7 @@ Build and test commands: see operation_manual.md, section 3.
 
 A four-line ceremony: **configure → build → test → run**. That is the whole build system of this repo. When a later milestone says "meet the acceptance criteria", it means this ceremony still works after your changes.
 
-❑ Ticks checklist.md section 1: "build the skeleton from a clean build directory and run the tests".
+❑ Ticks checklist.md section 1: "build the skeleton and run the tests".
 
 ---
 
@@ -183,7 +183,7 @@ Two facts worth having for the next 40 weeks:
 1. A test here is just a program the test runner launches. **Exit code `0` = pass, anything else = fail.** That's the entire verdict mechanism.
 2. `--output-on-failure` prints what the failed program wrote, so you can see *why* it failed.
 
-❑ Ticks checklist.md section 1: "deliberately break the program and confirm CTest reports a failure".
+❑ Ticks checklist.md section 1: "break the program and confirm CTest reports a failure".
 
 ### 4. Restore — the safety net that makes a playground safe
 
@@ -195,13 +195,13 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-Green again. `git restore <file>` says: "this file, as of the last commit, please" — it **discards your uncommitted edits** to that file, nothing else. That's the emergency brake you'll use whenever experimenting goes sideways (full first-aid kit: [guides/lost.md](guides/lost.md)).
+Green again. `git restore <file>` throws away your uncommitted edits to that file and brings back the last committed version. Nothing else changes. That's your emergency brake (full kit: [guides/lost.md](guides/lost.md)).
 
 ---
 
-## Part 4 — Start the log (10 min)
+## Part 4 — Start the log (5 min)
 
-The plan builds over 40 weeks. The thing that survives gaps, busy weeks, and your memory is a small file that always states where you are and what's next. Full rules live in [guides/log.md](guides/log.md); today you only need the first entry.
+You need a place-marker so future-you knows where to start. It takes 2 minutes. Full guide: [guides/log.md](guides/log.md).
 
 ### 1. Create it from the template
 
@@ -209,49 +209,39 @@ The plan builds over 40 weeks. The thing that survives gaps, busy weeks, and you
 cp PROGRESS.template.md PROGRESS.md
 ```
 
-### 2. Fill in "Current state"
+### 2. Fill in three lines
 
-Example of a well-filled section (you'll have your own values):
+Open `PROGRESS.md` and fill in the `Now` part. Example (use your own values):
 
 ```markdown
-## Current state
+## Now
 
-- Current roadmap week: 1
-- Current milestone: 01 — Argument Inspector
-- Status: active
-- Last verified commit: ac52765 (modify gitignore)
-- Last known-good build command: cmake -S . -B build && cmake --build build
-- Last known-good test command: ctest --test-dir build --output-on-failure
-- Current blocker: none
-- Next physical action: Print the current working directory in srcscope/src/main.cpp using std::filesystem::current_path()
-- Time available before next session: about 1 hour today
-- Deferred ideas: none yet (they go to BACKLOG.md when they appear)
-- Recovery debt (if any): none
+- Milestone: 01 — Argument Inspector (Roadmap Week 1)
+- Next: Print the current working directory in srcscope/src/main.cpp
+- Stuck on: none
 ```
 
-The only line with real power is **next physical action**. Rules:
+**Next** is the only line that matters. Rules:
 
-- Must be a verb + a thing + a file: *"Print the current working directory in srcscope/src/main.cpp"*.
-- Never vague: *"work on Milestone 01"*, *"clean things up"* — bad. A future you, tired and rusty, must be able to start in 30 seconds.
+- One step, with a file: *"Print the current working directory in srcscope/src/main.cpp"*.
+- Never vague (*"work on M01"*), never blank. Tired future-you must be able to start in 30 seconds.
 
-### 3. Log today as a session
+### 3. Log today as one row
 
-In `PROGRESS.md` there's a "Session log" table — newest first, one short row per session:
+In the `Log` table, add one short row:
 
-| Date | What happened | Next action |
-|:-----|:--------------|:------------|
-| 2026-10-23 | First build + test pass; broke and fixed a test on purpose; started M01 | Print cwd in srcscope/src/main.cpp |
+| Date | Did | Next |
+|:-----|:----|:-----|
+| 2026-10-26 | First build + test green; broke and fixed a test; started M01 | Print cwd in srcscope/src/main.cpp |
 
 ### 4. Checkpoint commit
-
-This file (plus any fixes) should now be committed. The plan says: commit when a milestone's acceptance criteria pass — starting the log counts:
 
 ```bash
 git add PROGRESS.md
 git commit -m "start progress log; day 1 self-check done"
 ```
 
-❑ Ticks checklist.md section 1: "create PROGRESS.md, record the current milestone, target outcome, and next action".
+❑ Ticks checklist.md section 1: "create PROGRESS.md, write milestone + Next".
 
 ---
 
@@ -272,7 +262,7 @@ A plan that fits today's loop:
 2. Print the working directory → build → run → check
 3. Try zero / one / many args → make sure none crash
 4. Tests still green → commit: "feat(srcscope): argument inspector (M01)"
-5. PROGRESS.md: mark M01 done + write the next action (M02: File Counter)
+5. PROGRESS.md: add a Done block for M01 + set Next to M02's first step
 ```
 
 Two C++ facts you'll need (look up anything else as you go — that's the intended way):
@@ -300,7 +290,7 @@ Not everything at once. The map in [README.md](README.md) says for each file *wh
 - you touch the build for the second time → [guides/build.md](guides/build.md)
 - Milestone 04 (Week 4) arrives → [guides/tests.md](guides/tests.md) before it
 - Week 5 adds the `tinycore/` directory → recipes in [guides/tour.md](guides/tour.md)
-- you end any session → [guides/log.md](guides/log.md)
+- you end a session (2 min) → [guides/log.md](guides/log.md)
 - the weekly rhythm, sessions, recovery → [operation_manual.md](operation_manual.md), skim once this week
 - any kind of confusion → [guides/lost.md](guides/lost.md)
 
